@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Quality Chcek'){
             steps{
-                withSonarQubeEnv(credentialsId: 'sonarqube-token', installationName:'SonarQube') {
+                withSonarQubeEnv(credentialsId: 'sonarqube-token', installationName:'Sonarqube') {
                     sh '''mvn clean verify sonar:sonar -Dsonar.projectKey=assignment3pipeline -Dsonar.projectName='assignment3pipeline' -Dsonar.host.url=
 http://localhost:9000'''
                }
