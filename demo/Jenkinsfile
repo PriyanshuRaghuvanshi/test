@@ -17,6 +17,7 @@ pipeline {
          stage('Build docker image'){
             steps{
                 script{
+                    cd /demo
                     sh 'docker build -t assignment .'
                 }
             }
