@@ -14,7 +14,7 @@ pipeline {
                 sh 'mvn clean package -f demo/pom.xml '
             }
         }
-        stage{
+        stage('Quality Chcek'){
             steps{
                 withSonarQubeEnv(credentialsId: 'sonarqube-token', installationName:'SonarQube') {
                     sh '''mvn clean verify sonar:sonar -Dsonar.projectKey=assignment3pipeline -Dsonar.projectName='assignment3pipeline' -Dsonar.host.url=
