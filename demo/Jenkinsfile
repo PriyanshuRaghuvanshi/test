@@ -16,10 +16,12 @@ pipeline {
         }
          stage('Build docker image'){
             steps{
+                dir('demo'){
                 script{
-                    sh 'docker build -t assignment -f demo/Dockerfile'
+                    sh 'docker build -t assignment .'
                 }
             }
         }
     }
+}
 }
