@@ -16,9 +16,9 @@ pipeline {
         }
         stage('SonarQube Analysis') {
          withSonarQubeEnv() {
-      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=qualitycheck -Dsonar.projectName='qualitycheck'"
-    }
-  }
+            sh "mvn clean verify sonar:sonar -Dsonar.projectKey=qualitycheck -Dsonar.projectName='qualitycheck'"
+          }
+       }
          stage('Build docker image'){
             steps{
                 dir('demo'){
