@@ -16,7 +16,7 @@ pipeline {
         }
         stage('SonarQube Analysis') {
         steps{
-            withSonarQubeEnv(credentialsId: 'sonarqube-token',installationName:'Sonarqube') {
+            withSonarQubeEnv(credentialsId: 'sonarqube-credential',installationName:'Sonarqube') {
             sh "mvn clean verify -f demo/pom.xml sonar:sonar -Dsonar.projectKey=qualitycheck -Dsonar.projectName='qualitycheck'"
           }
        }
